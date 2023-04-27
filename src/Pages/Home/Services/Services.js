@@ -6,9 +6,23 @@ const Services = () => {
         <>
 
             <div className="">
-                <div className="w-10/12 grid grid-cols-3 mx-auto justify-center" />
+                <div className="w-10/12 grid grid-cols-3 mx-auto" />
 
-                <div className='flex justify-center items-center border border-primary rounded-sm'>
+                <div className='flex justify-center items-center w-full'>
+
+                    <img src={delivery} className='w-12 h-12 object-cover' alt="" />
+                    <div className=''>
+                        <h4 className='font-medium capitalize text-lg'>Free shopping</h4>
+                        <p>Lorem ipsum dolor sit amet.</p>
+
+                    </div>
+
+                    <img src={delivery} className='w-12 h-12 object-cover' alt="" />
+                    <div className=''>
+                        <h4 className='font-medium capitalize text-lg'>Free shopping</h4>
+                        <p>Lorem ipsum dolor sit amet.</p>
+
+                    </div>
 
                     <img src={delivery} className='w-12 h-12 object-cover' alt="" />
                     <div className=''>
@@ -19,7 +33,7 @@ const Services = () => {
 
                 </div>
 
-                <div className='flex justify-center items-center border border-primary rounded-sm'>
+                {/* <div className='flex justify-center items-center'>
 
                     <img src={delivery} className='w-12 h-12 object-cover' alt="" />
                     <div className=''>
@@ -28,18 +42,11 @@ const Services = () => {
 
                     </div>
 
-                </div>
+                </div> */}
 
-                <div className='flex justify-center items-center border border-primary rounded-sm'>
 
-                    <img src={delivery} className='w-12 h-12 object-cover' alt="" />
-                    <div className=''>
-                        <h4 className='font-medium capitalize text-lg'>Free shopping</h4>
-                        <p>Lorem ipsum dolor sit amet.</p>
 
-                    </div>
 
-                </div>
 
 
 
