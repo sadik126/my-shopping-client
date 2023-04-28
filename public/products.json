@@ -1,0 +1,35 @@
+[
+    {
+        "_id": 1,
+        "name": "Mens Shirt",
+        "price": "800",
+        "available": 937,
+        "description": "Typically made of cotton or a cotton blend, dress shirts are usually worn with formal attire. They often have a pointed collar, long sleeves with buttoned cuffs, and a button-down front.",
+        "img": "https://cdn.shopify.com/s/files/1/0556/9826/0107/collections/shirt-mens_1200x1200.png?v=1640705363",
+        "minimum": "20",
+        "img1": "https://www.toptenmartltd.com/wp-content/uploads/2023/03/main-1.jpg",
+        "img2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-CiLcoQgJ39RotIreN_hbNnd24O-cvwfzJGe33OwETgiMgkHg4TJ7BbrdTLE6rLPJ9zU&usqp=CAU"
+    },
+    {
+        "_id": 2,
+        "name": "Mens Polo tshirt",
+        "price": "500",
+        "available": 937,
+        "description": "Polo shirts are characterized by their short sleeves, a collar, and a placket with two or three buttons. They are usually made of cotton and are commonly associated with sporty or casual settings.",
+        "img": "https://static-01.daraz.com.bd/p/311be07bd009cfe55a24b5146ae084bc.jpg_720x720.jpg_.webp",
+        "minimum": "20",
+        "img1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm7opBcpYGmC4LCFmPAabzUuVyg8jxjcJV1VFLD9vvp94Fl71Eu2wHzUVra3hB-9PtwnY&usqp=CAU",
+        "img2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQKnkOAS4bLfMq5ked3JSqVs8Fu7cFheIINGXXv9uyH4Ta-4RLFgXqql2wfSWW7TgM&usqp=CAU"
+    },
+    {
+        "_id": 3,
+        "name": "Mens T shirt",
+        "price": "250",
+        "available": 937,
+        "description": "Asus expedition GeForce GTX 1050 Ti desktop graphics card has 4GB GDDR…",
+        "img": "https://asset1.cxnmarksandspencer.com/is/image/mands/SD_03_T28_5380M_Z0_X_EC_0",
+        "minimum": "20",
+        "img1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpBtovfglVvBLw5Gcfak3RjmYFYXP73Wec4pIdhj3ag0MyLMcUZ8cEkvQZcs1hzL-rwoo&usqp=CAU",
+        "img2": "https://img01.ztat.net/article/spp-media-p1/c588f70af40d32d19179536baa9c69f5/8c3e041fcd8541b4a5d652f1abf8b0f2.jpg?imwidth=156"
+    }
+]

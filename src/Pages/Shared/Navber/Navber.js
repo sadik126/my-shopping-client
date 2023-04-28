@@ -25,8 +25,10 @@ const Navber = () => {
     const menuItems =
         <>
             <li><CustomLink to='/'>HOME</CustomLink></li>
+            <li><CustomLink to='/products'>PRODUCTS</CustomLink></li>
             <li><CustomLink to='/about'>ABOUT</CustomLink></li>
             <li><CustomLink to='/contact'>CONTACT</CustomLink></li>
+
 
         </>
     return (
@@ -47,16 +49,16 @@ const Navber = () => {
                     </div>
                     <a className="btn btn-ghost normal-case text-xl font-semibold"><img src={logo} alt="" />MY   <span className='text-red-700'> SHOPPING</span></a>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {
                             menuItems
                         }
                     </ul>
                 </div>
-                <div className="navbar-end">
+                {/* <div className="navbar-end">
                     <a className="btn">Get started</a>
-                </div>
+                </div> */}
             </div>
 
         </>
