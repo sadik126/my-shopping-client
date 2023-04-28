@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from '../../Layout/Main/Main';
 import Home from '../../Pages/Home/Home/Home';
 import Products from '../../Pages/Products/Products';
+import Productsdetail from '../../Pages/Products/Productsdetail';
 
 const router = createBrowserRouter([
     {
@@ -17,7 +18,12 @@ const router = createBrowserRouter([
             {
                 path: "/products",
                 element: <Products></Products>
-            }
+            },
+            {
+                path: '/product/:id',
+                element: <Productsdetail></Productsdetail>,
+                loader: ({ params }) => fetch(`https://tools-server-five.vercel.app/tools/${params.id}`)
+            },
 
         ]
     }

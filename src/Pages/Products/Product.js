@@ -8,12 +8,12 @@ const Product = (props) => {
 
 
     const nevigatedetail = (id) => {
-        nevigate(`/tools/${id}`)
+        nevigate(`/product/${id}`)
     }
 
-    const nevigateperchase = (id) => {
-        nevigate(`/purchase/${id}`)
-    }
+    // const nevigateperchase = (id) => {
+    //     nevigate(`/purchase/${id}`)
+    // }
 
     return (
         <>
@@ -32,7 +32,7 @@ const Product = (props) => {
                     <p>Price : {price}</p>
                     <p>Minimum : {minimum}</p>
                     <div class="card-actions">
-                        <button onClick={() => nevigateperchase(_id)} class="btn btn-primary">Buy Now</button>
+                        <button class="btn btn-primary">Buy Now</button>
                         <button onClick={() => nevigatedetail(_id)} class="btn btn-secondary">Detail</button>
                     </div>
                 </div>
