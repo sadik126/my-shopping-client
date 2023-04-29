@@ -1,37 +1,81 @@
-import React, { useState } from 'react';
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Authcontext } from '../../Context/Authprovider';
+import app from '../../firebase.init';
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const { signInUser, googlesignIN } = useContext(Authcontext)
 
     const [Loginerror, setLoginerror] = useState('')
+
+    const auth = getAuth(app)
+
+    const location = useLocation()
+
+    const nevigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
 
 
     const onSubmit = async data => {
         console.log(data)
         setLoginerror('')
-        // signInUser(data.email, data.password)
-        //     .then(result => {
-        //         const user = result.user;
-        //         console.log(user)
-        //         toast.success('Doctors portal Login successfully')
-        //         nevigate(from, { replace: true })
-        //     })
-        //     .catch(err => {
-        //         console.log(err.code)
-        //         if (err.code === 'auth/user-not-found') {
-        //             setLoginerror('This email adress is not registered')
-        //         }
-        //         else if (err.code === 'auth/wrong-password') {
-        //             setLoginerror('Please check your password')
-        //         }
-        //         else {
-        //             setLoginerror('An unknown error occurred.please try again later')
-        //         }
-        //         // setLoginerror(err.message)
-        //     })
+        signInUser(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+                toast.success('My shopping login successfully')
+                nevigate(from, { replace: true })
+            })
+            .catch(err => {
+                console.log(err.code)
+                if (err.code === 'auth/user-not-found') {
+                    setLoginerror('This email adress is not registered')
+                }
+                else if (err.code === 'auth/wrong-password') {
+                    setLoginerror('Please check your password')
+                }
+                else {
+                    setLoginerror('An unknown error occurred.please try again later')
+                }
+                // setLoginerror(err.message)
+            })
     }
+
+
+    const googlesign = () => {
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                toast.success('my shopping login successfully')
+                nevigate(from, { replace: true })
+                console.log(user)
+                // IdP data available using getAdditionalUserInfo(result)
+                // ...
+            })
+            .catch((error) => {
+                console.log(error)
+                toast.error('There is an error.please wait for it')
+                // Handle Errors here.
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
+                // // The email of the user's account used.
+                // const email = error.customData.email;
+                // // The AuthCredential type that was used.
+                // const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            })
+    }
+
     return (
         <div className='h-[800px] flex justify-center items-center'>
             <div>
@@ -184,7 +228,7 @@ const Login = () => {
                                 </a> */}
                                 </form>
 
-                                <button className="btn  btn-success w-full"> <img style={{ width: '30px' }} alt="" />Continue with google</button>
+                                <button onClick={googlesign} className="btn  btn-success w-full"> <img style={{ width: '30px' }} alt="" />Continue with google</button>
                             </div>
                         </div>
                     </div>
