@@ -28,6 +28,7 @@ const Navber = () => {
             <li><CustomLink to='/products'>PRODUCTS</CustomLink></li>
             <li><CustomLink to='/about'>ABOUT</CustomLink></li>
             <li><CustomLink to='/contact'>CONTACT</CustomLink></li>
+            <li><CustomLink to='/login'>LOGIN</CustomLink></li>
 
 
         </>
