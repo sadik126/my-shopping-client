@@ -22,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path: '/product/:id',
                 element: <Productsdetail></Productsdetail>,
-                loader: ({ params }) => fetch(`https://tools-server-five.vercel.app/tools/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5020/products/${params.id}`)
             },
 
         ]

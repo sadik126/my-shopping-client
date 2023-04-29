@@ -6,7 +6,7 @@ const Products = () => {
     const { data: products = [], isError, isLoading } = useQuery({
         queryKey: ['tools'],
         queryFn: async () => {
-            const res = await fetch('https://sadik126.github.io/my-shopping-api/products.json')
+            const res = await fetch('http://localhost:5020/products')
             const data = await res.json()
             return data
         }

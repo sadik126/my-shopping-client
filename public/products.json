@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "name": "Mens Shirt",
         "price": "800",
         "available": 937,
@@ -11,7 +10,6 @@
         "img2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-CiLcoQgJ39RotIreN_hbNnd24O-cvwfzJGe33OwETgiMgkHg4TJ7BbrdTLE6rLPJ9zU&usqp=CAU"
     },
     {
-        "_id": 2,
         "name": "Mens Polo tshirt",
         "price": "500",
         "available": 937,
@@ -22,7 +20,6 @@
         "img2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQKnkOAS4bLfMq5ked3JSqVs8Fu7cFheIINGXXv9uyH4Ta-4RLFgXqql2wfSWW7TgM&usqp=CAU"
     },
     {
-        "_id": 3,
         "name": "Mens T shirt",
         "price": "250",
         "available": 937,
