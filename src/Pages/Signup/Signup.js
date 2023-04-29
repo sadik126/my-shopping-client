@@ -25,6 +25,7 @@ const Signup = () => {
 
 
     const onSubmit = data => {
+        console.log(data)
 
         createUser(data.email, data.password)
             .then(result => {
@@ -38,13 +39,15 @@ const Signup = () => {
                 //     displayName: data.Name
                 // }
 
+                updateProfile({ displayName: data.name })
+
             })
             .catch(err => {
                 console.log(err)
                 // setsignupError(err.message)
             })
 
-        updateProfile({ displayName: data.name })
+
 
         toast.success(`${data.name} Added successfully`)
         nevigate(from, { replace: true })

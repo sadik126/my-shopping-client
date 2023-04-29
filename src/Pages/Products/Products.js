@@ -4,9 +4,9 @@ import Product from './Product';
 
 const Products = () => {
     const { data: products = [], isError, isLoading } = useQuery({
-        queryKey: ['tools'],
+        queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5020/products')
+            const res = await fetch('https://my-shopping-server-side.vercel.app/products')
             const data = await res.json()
             return data
         }

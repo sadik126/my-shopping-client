@@ -48,7 +48,7 @@ const Navber = () => {
             }
 
             {
-                user?.uid ? <li><Link to='' className='text-orange-700'>Welcome  {user.displayName}</Link></li> : <><Link to=''></Link></>
+                user?.uid ? <li><Link to='' className='text-orange-700'>Welcome  {user.displayName.substring(0, 5)}</Link></li> : <><Link to=''></Link></>
             }
 
 
