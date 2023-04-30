@@ -14,16 +14,36 @@ const Products = () => {
 
     return (
         <>
-            <div className="container mx-auto">
-                <h2 className='text-3xl text-center uppercase font-mono mt-9 font-bold'>Our <span className='text-primary'>products</span> </h2>
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
-                    {
-                        products.map(product => <Product key={product._id} product={product}></Product>)
-                    }
 
+            <div className="drawer drawer-end">
+                <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                <div className="drawer-content" style={{ overflow: 'hidden' }}>
+
+                    <div className="container mx-auto">
+                        <h2 className='text-3xl text-center uppercase font-mono mt-9 font-bold'>Our <span className='text-primary'>products</span> </h2>
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+                            {
+                                products.map(product => <Product key={product._id} product={product}></Product>)
+                            }
+
+                        </div>
+
+                    </div>
+
+
+
+                    {/* <label htmlFor="my-drawer-4" className="drawer-button btn btn-primary">Open drawer</label> */}
                 </div>
+                <div className="drawer-side">
+                    <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
+                    <ul className="menu p-4 w-80 bg-base-100 text-base-content">
 
+                        <li><a>Sidebar Item 1</a></li>
+                        <li><a>Sidebar Item 2</a></li>
+                    </ul>
+                </div>
             </div>
+
 
         </>
     );
