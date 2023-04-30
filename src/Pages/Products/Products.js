@@ -12,6 +12,10 @@ const Products = () => {
         }
     })
 
+    const addtocart = () => {
+        console.log('clicked')
+    }
+
     return (
         <>
 
@@ -23,7 +27,7 @@ const Products = () => {
                         <h2 className='text-3xl text-center uppercase font-mono mt-9 font-bold'>Our <span className='text-primary'>products</span> </h2>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                             {
-                                products.map(product => <Product key={product._id} product={product}></Product>)
+                                products.map(product => <Product key={product._id} product={product} addtocart={addtocart}></Product>)
                             }
 
                         </div>

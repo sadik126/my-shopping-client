@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const Product = (props) => {
     const { _id, name, price, minimum, available, description, img, loading } = props.product
 
+    const { addtocart } = props.addtocart
+
     const nevigate = useNavigate();
 
 
@@ -32,7 +34,7 @@ const Product = (props) => {
                     <p>Price : {price}</p>
                     <p>Minimum : {minimum}</p>
                     <div class="card-actions">
-                        <button class="btn btn-primary">Buy Now</button>
+                        <button onClick={addtocart} class="btn btn-primary">Buy Now</button>
                         <button onClick={() => nevigatedetail(_id)} class="btn btn-secondary">Detail</button>
                     </div>
                 </div>
