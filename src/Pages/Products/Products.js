@@ -1,8 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import { useState } from 'react';
 import Product from './Product';
 
 const Products = () => {
+    const [cart, setCart] = useState([])
     const { data: products = [], isError, isLoading } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
@@ -12,9 +14,29 @@ const Products = () => {
         }
     })
 
-    const addtocart = () => {
-        console.log('clicked')
+    const addtocart = (product) => {
+        const newcart = [...cart, product]
+        setCart(newcart)
     }
+
+
+
+    let total = 0;
+    let shipping = 0;
+    let quantity = 0;
+    for (const product of cart) {
+
+
+        quantity = quantity + product.quantity;
+        total = total + product.price * product.quantity;
+
+        shipping = shipping + product.shipping
+
+    }
+
+    let tax = parseFloat((total * 10 / 100).toFixed(2));
+
+    let grandtotal = total + shipping + tax;
 
     return (
         <>
@@ -42,8 +64,16 @@ const Products = () => {
                     <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
 
-                        <li><a>Sidebar Item 1</a></li>
-                        <li><a>Sidebar Item 2</a></li>
+                        <li>{cart.length}</li>
+                        <hr />
+                        <li>Total price:{total}</li>
+                        <hr />
+                        <li>Total shipping:{shipping}</li>
+                        <hr />
+                        <li>Total tax:{tax}</li>
+                        <hr />
+                        <li className='text-primary text-3xl'>Total:{grandtotal}</li>
+
                     </ul>
                 </div>
             </div>
