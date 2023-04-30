@@ -22,7 +22,7 @@ const Product = (props) => {
 
             <div class="card  shadow-xl p-5">
                 <div class="px-10 pt-10">
-                    <img style={{ height: "170px" }} src={img} height="170" width="384" alt="" />
+                    <img style={{ height: "250px" }} src={img} height="170" width="384" alt="" />
 
                 </div>
 
@@ -32,7 +32,7 @@ const Product = (props) => {
                     <p>{description?.substring(0, 50)}...</p>
                     <p> {available > 0 ? <span className='text-green-600'>Available</span> : <span className='text-red-600'>Stock out</span>} </p>
                     <p>Price : {price}</p>
-                    <p>Minimum : {minimum}</p>
+                    {/* <p>Minimum : {minimum}</p> */}
                     <div class="card-actions">
                         <button onClick={() => addtocart(props.product)} class="btn btn-primary">Buy Now</button>
                         <button onClick={() => nevigatedetail(_id)} class="btn btn-secondary">Detail</button>
