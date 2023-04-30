@@ -5,14 +5,15 @@ import Services from '../Services/Services';
 
 const Home = () => {
     return (
-        <>
+        <div className='container mx-auto' style={{ overflow: 'hidden' }}>
             <Banner></Banner>
+
             <Services></Services>
             <Secondbanner></Secondbanner>
 
 
 
-        </>
+        </div>
     );
 };
 
