@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { addToDb, getproduct } from '../../utilities/fakedb';
 import Product from './Product';
 
 const Products = () => {
@@ -14,29 +15,52 @@ const Products = () => {
         }
     })
 
+    useEffect(() => {
+        const storedCart = getproduct();
+        console.log(storedCart)
+        const savedcart = [];
+        for (const id in storedCart) {
+            const cartproduct = products.find(product => product._id === id)
+
+            if (cartproduct) {
+
+
+                const quantity = storedCart[id];
+                cartproduct.quantity = quantity;
+                savedcart.push(cartproduct);
+
+            }
+        }
+
+        setCart(savedcart);
+
+
+    }, [cart])
+
     const addtocart = (product) => {
         const newcart = [...cart, product]
         setCart(newcart)
+        addToDb(product._id)
     }
 
 
 
     let total = 0;
     let shipping = 0;
-    let quantity = 0;
+
     for (const product of cart) {
 
 
-        quantity = quantity + product.quantity;
-        total = total + product.price * product.quantity;
 
-        shipping = shipping + product.shipping
+        total = total + parseInt(product.price);
+
+
 
     }
 
     let tax = parseFloat((total * 10 / 100).toFixed(2));
 
-    let grandtotal = total + shipping + tax;
+    let grandtotal = total + tax;
 
     return (
         <>
@@ -64,7 +88,7 @@ const Products = () => {
                     <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
 
-                        <li>{cart.length}</li>
+                        <li>Total products:{cart.length} items</li>
                         <hr />
                         <li>Total price:{total}</li>
                         <hr />
