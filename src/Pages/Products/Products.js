@@ -9,7 +9,7 @@ const Products = () => {
     const { data: products = [], isError, isLoading } = useQuery({
         queryKey: ['products'],
         queryFn: async () => {
-            const res = await fetch('https://my-shopping-server-side.vercel.app/products')
+            const res = await fetch('products.json')
             const data = await res.json()
             return data
         }
@@ -65,11 +65,12 @@ const Products = () => {
     return (
         <>
 
-            <div className="drawer drawer-end">
-                <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content" style={{ overflow: 'hidden' }}>
+            <div className="container mx-auto">
 
-                    <div className="container mx-auto">
+                <div className="drawer drawer-end">
+                    <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
+                    <div className="drawer-content">
+
                         <h2 className='text-3xl text-center uppercase font-mono mt-9 font-bold'>Our <span className='text-primary'>products</span> </h2>
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
                             {
@@ -78,29 +79,38 @@ const Products = () => {
 
                         </div>
 
+
+
+
+
+                        {/* <label htmlFor="my-drawer-4" className="drawer-button btn btn-primary">Open drawer</label> */}
                     </div>
+                    <div className="drawer-side">
+                        <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
+                        <ul className="menu p-4 w-80 bg-base-100 text-base-content">
 
+                            <h1 className='text-3xl font-extrabold text-center text-purple-600 my-10'>ORDER SUMMARY</h1>
 
+                            <li className='font-semibold'>Total products:  {cart.length} items</li>
+                            <hr />
+                            <li className='font-semibold'>Total price: {total} BDT</li>
+                            <hr />
 
-                    {/* <label htmlFor="my-drawer-4" className="drawer-button btn btn-primary">Open drawer</label> */}
+                            <hr />
+                            <li className='font-semibold'>Total tax:  {tax} BDT</li>
+                            <hr />
+                            <hr />
+                            <hr />
+                            <li className='text-primary text-3xl'>Total:{grandtotal} BDT</li>
+
+                        </ul>
+                    </div>
                 </div>
-                <div className="drawer-side">
-                    <label htmlFor="my-drawer-4" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 bg-base-100 text-base-content">
 
-                        <li>Total products:{cart.length} items</li>
-                        <hr />
-                        <li>Total price:{total}</li>
-                        <hr />
-                        <li>Total shipping:{shipping}</li>
-                        <hr />
-                        <li>Total tax:{tax}</li>
-                        <hr />
-                        <li className='text-primary text-3xl'>Total:{grandtotal}</li>
 
-                    </ul>
-                </div>
+
             </div>
+
 
 
         </>

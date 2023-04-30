@@ -31,7 +31,7 @@ const Product = (props) => {
                     {/* class="rounded-xl" */}
                     <p>{description?.substring(0, 50)}...</p>
                     <p> {available > 0 ? <span className='text-green-600'>Available</span> : <span className='text-red-600'>Stock out</span>} </p>
-                    <p>Price : {price}</p>
+                    <p>Price : {price} BDT</p>
                     {/* <p>Minimum : {minimum}</p> */}
                     <div class="card-actions">
                         <button onClick={() => addtocart(props.product)} class="btn btn-primary">Buy Now</button>

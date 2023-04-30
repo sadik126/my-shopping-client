@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { Link, useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 import { Authcontext } from '../../../Context/Authprovider';
-import logo from '../../../images/shopping-cart.png'
+import logo from '../../../images/shopping-cart.png';
+import logo1 from '../../../images/trolley.png';
 
 const Navber = () => {
 
@@ -50,7 +51,7 @@ const Navber = () => {
             {
                 user?.uid ? <li><Link to='' className='text-orange-700'>Welcome  {user?.displayName?.substring(0, 5)}</Link></li> : <><Link to=''></Link></>
             }
-            <label htmlFor="my-drawer-4" className="drawer-button btn btn-primary">Open drawer</label>
+            <label htmlFor="my-drawer-4" className="drawer-button btn btn-primary"> <img src={logo1} style={{ width: '15%' }} alt="" />Open Cart</label>
 
 
         </>
