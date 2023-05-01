@@ -1,5 +1,6 @@
 [
     {
+        "_id": "644bdbed6a2e4a461bf4ddc2",
         "name": "Mens Shirt",
         "price": "800",
         "available": 937,
@@ -10,6 +11,7 @@
         "img2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-CiLcoQgJ39RotIreN_hbNnd24O-cvwfzJGe33OwETgiMgkHg4TJ7BbrdTLE6rLPJ9zU&usqp=CAU"
     },
     {
+        "_id": "644bdbed6a2e4a461bf4ddc1",
         "name": "Mens Polo tshirt",
         "price": "500",
         "available": 937,
@@ -20,16 +22,7 @@
         "img2": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQKnkOAS4bLfMq5ked3JSqVs8Fu7cFheIINGXXv9uyH4Ta-4RLFgXqql2wfSWW7TgM&usqp=CAU"
     },
     {
-        "name": "Mens T shirt",
-        "price": "250",
-        "available": 937,
-        "description": "Asus expedition GeForce GTX 1050 Ti desktop graphics card has 4GB GDDR…",
-        "img": "https://asset1.cxnmarksandspencer.com/is/image/mands/SD_03_T28_5380M_Z0_X_EC_0",
-        "minimum": "20",
-        "img1": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpBtovfglVvBLw5Gcfak3RjmYFYXP73Wec4pIdhj3ag0MyLMcUZ8cEkvQZcs1hzL-rwoo&usqp=CAU",
-        "img2": "https://img01.ztat.net/article/spp-media-p1/c588f70af40d32d19179536baa9c69f5/8c3e041fcd8541b4a5d652f1abf8b0f2.jpg?imwidth=156"
-    },
-    {
+        "_id": "644bdbed6a2e4a461bf4ddc3",
         "name": "Mens T shirt",
         "price": "250",
         "available": 937,

@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import { Link, useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 import { Authcontext } from '../../../Context/Authprovider';
+import { useCart } from '../../../Context/Cart';
 import logo from '../../../images/shopping-cart.png';
 import logo1 from '../../../images/trolley.png';
 
 const Navber = () => {
 
     const { user, Logout } = useContext(Authcontext)
+
+    const [cart] = useCart();
 
     const nevigate = useNavigate();
 
@@ -41,8 +44,7 @@ const Navber = () => {
         <>
             <li><CustomLink to='/'>HOME</CustomLink></li>
             <li><CustomLink to='/products'>PRODUCTS</CustomLink></li>
-            <li><CustomLink to='/about'>ABOUT</CustomLink></li>
-            <li><CustomLink to='/contact'>CONTACT</CustomLink></li>
+
             {/* <li><CustomLink to='/login'>LOGIN</CustomLink></li> */}
             {
                 user?.uid ? <li><CustomLink to='/login' onClick={handleLogout}>LOGOUT</CustomLink></li> : <li><CustomLink to='/login'>LOGIN</CustomLink></li>
@@ -51,7 +53,8 @@ const Navber = () => {
             {
                 user?.uid ? <li><Link to='' className='text-orange-700'>Welcome  {user?.displayName?.substring(0, 5)}</Link></li> : <><Link to=''></Link></>
             }
-            <label htmlFor="my-drawer-4" className="drawer-button btn btn-primary"> <img src={logo1} style={{ width: '15%' }} alt="" />Open Cart</label>
+            <li><CustomLink to='/cart'>CART <span className='badge'>{cart?.length} </span></CustomLink></li>
+            {/* <label htmlFor="my-drawer-4" className="drawer-button btn btn-primary"> <img src={logo1} style={{ width: '15%' }} alt="" />Open Cart</label> */}
 
 
         </>

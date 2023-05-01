@@ -9,6 +9,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query'
 import Authprovider from './Context/Authprovider';
+import { Cart } from './Context/Cart';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -18,7 +19,11 @@ root.render(
 
     <React.StrictMode>
       <Authprovider>
-        <App />
+        <Cart>
+          <App />
+
+        </Cart>
+
       </Authprovider>
     </React.StrictMode>
 

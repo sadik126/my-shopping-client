@@ -1,10 +1,15 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../Context/Cart';
+
 
 const Product = (props) => {
     const { _id, name, price, minimum, available, description, img, loading } = props.product
 
-    const { addtocart } = props;
+    // const { addtocart } = props;
+
+    const [cart, setCart] = useCart();
 
     const nevigate = useNavigate();
 
@@ -34,7 +39,13 @@ const Product = (props) => {
                     <p>Price : {price} BDT</p>
                     {/* <p>Minimum : {minimum}</p> */}
                     <div class="card-actions">
-                        <button onClick={() => addtocart(props.product)} class="btn btn-primary">Buy Now</button>
+                        <button onClick={() => {
+                            setCart([...cart, props.product])
+
+                            toast.success('Item added')
+                            localStorage.setItem('cart', JSON.stringify(...cart))
+
+                        }} class="btn btn-primary">Buy Now</button>
                         <button onClick={() => nevigatedetail(_id)} class="btn btn-secondary">Detail</button>
                     </div>
                 </div>
