@@ -1,6 +1,7 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import Navber from '../../Pages/Shared/Navber/Navber';
+import dashboard from '../../images/dashboard.png';
 
 const Dashboard = () => {
     return (
@@ -10,7 +11,7 @@ const Dashboard = () => {
 
             <div className="drawer drawer-mobile">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center justify-center">
+                <div className="drawer-content">
 
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                     <Outlet></Outlet>
@@ -20,8 +21,8 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 bg-base-100 text-base-content">
 
-                        <li><a>Sidebar Item 1</a></li>
-                        <li><a>Sidebar Item 2</a></li>
+                        <li><Link to='/dashboard'> <img src={dashboard} alt="" /> Dashboard</Link></li>
+                        <li><Link to='/allproducts'> <img src={dashboard} alt="" />All Products</Link></li>
                     </ul>
 
                 </div>
