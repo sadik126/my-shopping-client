@@ -44,6 +44,7 @@ const Navber = () => {
         <>
             <li><CustomLink to='/'>HOME</CustomLink></li>
             <li><CustomLink to='/products'>PRODUCTS</CustomLink></li>
+            <li><CustomLink to='/dashboard'>DASHBOARD</CustomLink></li>
 
             {/* <li><CustomLink to='/login'>LOGIN</CustomLink></li> */}
             {
